@@ -49,5 +49,20 @@ git push -f origin 'branch_name'
 Example: 
 git push -f origin main
 
+### Tham chiếu tương đối
+Tham chiếu tương đối
+Dịch chuyển trong Git bằng cách chỉ định mã băm (hash) của commit cỏ vẻ hơi buồn tẻ. Trong đời thực thì sẽ không có mô tả Git trực quan ngay bên cạnh terminal của bạn đâu, nên nếu bạn muốn nhìn mã băm của commit thì phải dùng git log thôi.
+Hơn nữa, mã băm thực tế thường dài hơn rất nhiều. Ví dụ, mã băm của commit được giới thiệu trong phần trước là fed2da64c0efc5293610bdd892f82a58e8cbc5d8. Đọc mà xoắn hết cả lưỡi...
+Được cái là Git cũng khá thông minh về mã băm. Chỉ cần cung cấp kí tự mã băm đủ để phân biệt với các commit khác. Cho nên tôi có thể đơn giản chỉ cần gõ fed2 thay vì cái chuỗi dài ngoằng phía trên.
+DÙNG HEAD, tên nhánh (HEAD^, main^, dev~3) để tham chiếu tương đối
+Dịch chuyển lên 1 commit mỗi lần với ^
+Dịch chuyển lên nhiều commit mỗi lần với ~<số>
+=> git checkout main^
+=> git checkout dev~3
+
+### Dịch chuyển nhánh
+Tôi thì hay thường dùng tham chiếu tương đối để dịch chuyển nhánh. Bạn có thể trực tiếp gán lại nhánh cho commit với cú pháp -f. Kiểu như thế này:
+git branch -f main HEAD~3
+dịch chuyển (ép buộc) nhánh main lên 3 commit phía trên HEAD.
 
 
